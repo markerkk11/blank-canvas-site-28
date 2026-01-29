@@ -30,6 +30,8 @@ export function ProcessingPaymentPage() {
       setTimeout(() => {
         if (processingType === 'bank') {
           navigate("/bank-completion", { state: { orderId: state.orderId } });
+        } else if (processingType === 'completed') {
+          navigate("/order-completion", { state: { orderId: state.orderId } });
         } else {
           navigate("/otp-verification", { state: { orderId: state.orderId } });
         }
