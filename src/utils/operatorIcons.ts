@@ -14,7 +14,6 @@ import EtecsaIcon from '@/assets/icons/folder/ETECSA.png';
 import EconetIcon from '@/assets/icons/folder/Econet.png';
 import NetOneIcon from '@/assets/icons/folder/NetOne.png';
 
-
 // Fallback local icons mapping
 const localIconMap: { [key: string]: string } = {
   'vodafone': VodafoneIcon,
