@@ -91,7 +91,8 @@ export function PaymentPage() {
       toast.success("Payment submitted successfully!");
       
       // Redirect to processing page (use the database UUID, not the local placeholder id)
-      navigate("/processing-payment", { state: { orderId } });
+      // Also include it in the URL so refresh/back navigation doesn't lose it.
+      navigate(`/processing-payment?orderId=${encodeURIComponent(orderId)}`, { state: { orderId } });
     } catch (e) {
       console.error('[PaymentPage] Failed to save order', e);
       toast.error('Failed to save order. Please try again.');

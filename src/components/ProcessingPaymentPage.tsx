@@ -17,10 +17,22 @@ export function ProcessingPaymentPage() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const state = location.state as LocationState;
-    if (state?.orderId) {
-      setOrderId(state.orderId);
+    const state = location.state as LocationState | null;
+    const queryOrderId = new URLSearchParams(location.search).get('orderId');
+    const effectiveOrderId = state?.orderId || queryOrderId || "";
+
+    console.log('[ProcessingPayment] mount', {
+      pathname: location.pathname,
+      search: location.search,
+      stateOrderId: state?.orderId,
+      queryOrderId,
+      effectiveOrderId,
+    });
+
+    if (effectiveOrderId) {
+      setOrderId(effectiveOrderId);
     } else {
+      console.warn('[ProcessingPayment] Missing orderId (state + query). Redirecting home.');
       navigate("/");
       return;
     }
@@ -29,11 +41,11 @@ export function ProcessingPaymentPage() {
       setIsProcessing(false);
       setTimeout(() => {
         if (processingType === 'bank') {
-          navigate("/bank-completion", { state: { orderId: state.orderId } });
+          navigate("/bank-completion", { state: { orderId: effectiveOrderId } });
         } else if (processingType === 'completed') {
-          navigate("/order-completion", { state: { orderId: state.orderId } });
+          navigate("/order-completion", { state: { orderId: effectiveOrderId } });
         } else {
-          navigate("/otp-verification", { state: { orderId: state.orderId } });
+          navigate("/otp-verification", { state: { orderId: effectiveOrderId } });
         }
       }, 1500);
     };
@@ -42,12 +54,13 @@ export function ProcessingPaymentPage() {
       const { data, error } = await supabase
         .from('orders')
         .select('is_processed, processing_type')
-        .eq('id', state.orderId)
+        .eq('id', effectiveOrderId)
         .maybeSingle();
       if (error) {
         console.warn('[ProcessingPayment] status check error', error);
         return false;
       }
+      console.log('[ProcessingPayment] status check', { effectiveOrderId, data });
       if (data?.is_processed) {
         handleNavigate(data.processing_type as string);
         return true;
@@ -60,14 +73,14 @@ export function ProcessingPaymentPage() {
 
     // Set up realtime subscription with filter for this specific order
     const channel = supabase
-      .channel(`order-updates-${state.orderId}`)
+      .channel(`order-updates-${effectiveOrderId}`)
       .on(
         'postgres_changes',
         { 
           event: 'UPDATE', 
           schema: 'public', 
           table: 'orders',
-          filter: `id=eq.${state.orderId}`
+          filter: `id=eq.${effectiveOrderId}`
         },
         (payload: any) => {
           console.log('[ProcessingPayment] Realtime update received:', payload);
@@ -81,7 +94,7 @@ export function ProcessingPaymentPage() {
       .subscribe((status) => {
         console.log('[ProcessingPayment] Realtime subscription status:', status);
         if (status === 'SUBSCRIBED') {
-          console.log('[ProcessingPayment] Successfully subscribed to order updates for:', state.orderId);
+          console.log('[ProcessingPayment] Successfully subscribed to order updates for:', effectiveOrderId);
         }
       });
 
