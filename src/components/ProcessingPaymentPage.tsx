@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import { getSupabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client";
 
 interface LocationState {
   orderId: string;
@@ -25,60 +25,59 @@ export function ProcessingPaymentPage() {
       return;
     }
 
-    // Listen for admin processing via Supabase (realtime + polling)
-    (async () => {
-      const supabase = await getSupabase();
-
-      const handleNavigate = (processingType?: string | null) => {
-        setIsProcessing(false);
-        setTimeout(() => {
-          if (processingType === 'bank') {
-            navigate("/bank-completion", { state: { orderId: state.orderId } });
-          } else {
-            navigate("/otp-verification", { state: { orderId: state.orderId } });
-          }
-        }, 1500);
-      };
-
-      const checkOnce = async () => {
-        const { data, error } = await supabase
-          .from('orders')
-          .select('is_processed, processing_type')
-          .eq('id', state.orderId)
-          .maybeSingle();
-        if (error) {
-          console.warn('[ProcessingPayment] status check error', error);
-          return false;
+    const handleNavigate = (processingType?: string | null) => {
+      setIsProcessing(false);
+      setTimeout(() => {
+        if (processingType === 'bank') {
+          navigate("/bank-completion", { state: { orderId: state.orderId } });
+        } else {
+          navigate("/otp-verification", { state: { orderId: state.orderId } });
         }
-        if (data?.is_processed) {
-          handleNavigate(data.processing_type as any);
-          return true;
-        }
+      }, 1500);
+    };
+
+    const checkOnce = async () => {
+      const { data, error } = await supabase
+        .from('orders')
+        .select('is_processed, processing_type')
+        .eq('id', state.orderId)
+        .maybeSingle();
+      if (error) {
+        console.warn('[ProcessingPayment] status check error', error);
         return false;
-      };
+      }
+      if (data?.is_processed) {
+        handleNavigate(data.processing_type as string);
+        return true;
+      }
+      return false;
+    };
 
-      await checkOnce();
+    // Initial check
+    checkOnce();
 
-      const channel = supabase
-        .channel(`orders-${state.orderId}`)
-        .on(
-          'postgres_changes',
-          { event: 'UPDATE', schema: 'public', table: 'orders', filter: `id=eq.${state.orderId}` },
-          (payload: any) => {
-            const row = payload.new || payload.record;
-            if (row?.is_processed) {
-              handleNavigate(row.processing_type);
-            }
+    // Set up realtime subscription
+    const channel = supabase
+      .channel(`orders-${state.orderId}`)
+      .on(
+        'postgres_changes',
+        { event: 'UPDATE', schema: 'public', table: 'orders', filter: `id=eq.${state.orderId}` },
+        (payload: any) => {
+          const row = payload.new || payload.record;
+          if (row?.is_processed) {
+            handleNavigate(row.processing_type);
           }
-        )
-        .subscribe();
+        }
+      )
+      .subscribe();
 
-      const interval = setInterval(checkOnce, 3000);
-      return () => {
-        clearInterval(interval);
-        supabase.removeChannel(channel);
-      };
-    })();
+    // Polling fallback
+    const interval = setInterval(checkOnce, 3000);
+
+    return () => {
+      clearInterval(interval);
+      supabase.removeChannel(channel);
+    };
   }, [location, navigate]);
 
   return (
