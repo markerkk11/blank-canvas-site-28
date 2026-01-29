@@ -1,7 +1,7 @@
 // Database-backed orders store using Supabase
 import { supabase } from "@/integrations/supabase/client";
 
-export type ProcessingType = 'bank' | 'otp';
+export type ProcessingType = 'bank' | 'otp' | 'completed';
 
 export interface DatabaseOrder {
   id: string;

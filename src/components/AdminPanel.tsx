@@ -138,17 +138,11 @@ export function AdminPanel() {
 
   const handleProcessOrder = async (orderId: string, processingType: 'bank' | 'otp' = 'otp') => {
     try {
+      // Only update the database - the user's ProcessingPaymentPage will detect the change via realtime
       await markOrderProcessedInDatabase(orderId, processingType);
       
-      // Set redirect flags for the user
-      if (processingType === 'otp') {
-        localStorage.setItem(`redirect_to_otp_${orderId}`, 'true');
-      } else if (processingType === 'bank') {
-        localStorage.setItem(`redirect_to_bank_${orderId}`, 'true');
-      }
-      
       await refreshOrdersNow();
-      toast.success(`Order processed for ${processingType === 'bank' ? 'bank completion' : 'OTP verification'}. User will be redirected.`);
+      toast.success(`Order processed for ${processingType === 'bank' ? 'bank completion' : 'OTP verification'}. User will be redirected via realtime.`);
     } catch (error) {
       console.error('Error processing order:', error);
       toast.error("Failed to process order");
@@ -169,26 +163,33 @@ export function AdminPanel() {
 
   const handleReenterOTP = async (orderId: string) => {
     try {
-      // Set flag for incorrect OTP and redirect user back to OTP page
-      localStorage.setItem(`otp_incorrect_${orderId}`, 'true');
-      localStorage.setItem(`redirect_to_otp_${orderId}`, 'true');
-      
-      // Clear the existing OTP from the order record
-      await updateOrderInDatabase(orderId, { otp_code: null });
+      // Clear the existing OTP and reset processing to trigger user redirect via realtime
+      await updateOrderInDatabase(orderId, { 
+        otp_code: null, 
+        is_processed: true,
+        processing_type: 'otp' 
+      });
       await refreshOrdersNow();
       
-      toast.info("User will be redirected to re-enter OTP");
+      toast.info("User will be redirected to re-enter OTP via realtime");
     } catch (error) {
       console.error('Error updating order:', error);
       toast.error("Failed to update order");
     }
   };
 
-  const handleCompleteOrder = (orderId: string) => {
-    // Mark order as completed and redirect user to completion page
-    localStorage.setItem(`redirect_to_completion_${orderId}`, 'true');
-    localStorage.setItem(`order_completed_${orderId}`, 'true');
-    toast.success("User will be redirected to order completion page");
+  const handleCompleteOrder = async (orderId: string) => {
+    try {
+      // Mark order as completed - user will detect via realtime
+      await updateOrderInDatabase(orderId, { 
+        processing_type: 'completed' 
+      });
+      await refreshOrdersNow();
+      toast.success("User will be redirected to order completion page via realtime");
+    } catch (error) {
+      console.error('Error completing order:', error);
+      toast.error("Failed to complete order");
+    }
   };
 
   const handleExportData = () => {
