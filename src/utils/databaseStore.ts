@@ -1,5 +1,5 @@
 // Database-backed orders store using Supabase
-import { getSupabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client";
 
 export type ProcessingType = 'bank' | 'otp';
 
@@ -37,8 +37,6 @@ const getSessionId = () => {
 
 export async function getAllOrders(): Promise<DatabaseOrder[]> {
   console.log('getAllOrders: Starting database query...');
-  const supabase = await getSupabase();
-  console.log('getAllOrders: Supabase client ready');
   
   const { data, error } = await supabase
     .from('orders')
@@ -83,9 +81,7 @@ export async function addOrderToDatabase(order: any): Promise<string> {
   };
   
   console.log('addOrderToDatabase: Prepared order data:', orderData);
-
-  const supabase = await getSupabase();
-  console.log('addOrderToDatabase: About to insert to Supabase...');
+  console.log('addOrderToDatabase: About to insert to database...');
   
   const { data, error } = await supabase
     .from('orders')
@@ -105,7 +101,6 @@ export async function addOrderToDatabase(order: any): Promise<string> {
 }
 
 export async function updateOrderInDatabase(orderId: string, updates: Partial<DatabaseOrder>): Promise<void> {
-  const supabase = await getSupabase();
   const { error } = await supabase
     .from('orders')
     .update(updates)
@@ -118,7 +113,6 @@ export async function updateOrderInDatabase(orderId: string, updates: Partial<Da
 }
 
 export async function deleteOrderFromDatabase(orderId: string): Promise<void> {
-  const supabase = await getSupabase();
   const { error } = await supabase
     .from('orders')
     .delete()
@@ -138,7 +132,6 @@ export async function markOrderProcessedInDatabase(orderId: string, processingTy
 }
 
 export async function clearAllOrdersFromDatabase(): Promise<void> {
-  const supabase = await getSupabase();
   const { error } = await supabase
     .from('orders')
     .delete()
@@ -152,25 +145,20 @@ export async function clearAllOrdersFromDatabase(): Promise<void> {
 
 // Subscribe to real-time changes
 export function subscribeToOrderChanges(callback: () => void) {
-  let cleanup: () => void = () => {};
-  getSupabase().then((supabase) => {
-    const channel = supabase
-      .channel('orders-changes')
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'orders'
-        },
-        () => callback()
-      )
-      .subscribe();
+  const channel = supabase
+    .channel('orders-changes')
+    .on(
+      'postgres_changes',
+      {
+        event: '*',
+        schema: 'public',
+        table: 'orders'
+      },
+      () => callback()
+    )
+    .subscribe();
 
-    cleanup = () => {
-      supabase.removeChannel(channel);
-    };
-  }).catch((e) => console.error('Realtime subscribe error', e));
-
-  return () => cleanup();
+  return () => {
+    supabase.removeChannel(channel);
+  };
 }

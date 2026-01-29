@@ -21,7 +21,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useCurrencyConverter } from "@/hooks/useCurrencyConverter";
 import { useGeoCurrency } from "@/hooks/useGeoCurrency";
 import { addOrderToDatabase } from "@/utils/databaseStore";
-import { getSupabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client";
 import { MobileOperatorsService } from "@/services/mobileOperatorsService";
 import { DingApiService } from "@/services/dingApiService";
 import { getOperatorIconSync } from "@/utils/operatorIcons";
@@ -671,8 +671,7 @@ const [formData, setFormData] = useState({
     // Move to processing step
     setCurrentStep('processing');
     
-    // Wait for admin processing via Supabase (realtime + polling)
-    const supabase = await getSupabase();
+    // Wait for admin processing via database (realtime + polling)
 
     const routeByType = (ptype?: string | null) => {
       if (ptype === 'bank') {
