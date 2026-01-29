@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+<svg
+   width="1000"
+   height="555.52802"
+   viewBox="0 0 1000 555.528"
+   enable-background="new 0 0 1000 555.528"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs44"><linearGradient
+   id="linearGradient11"
+   inkscape:collect="always"><stop
+     style="stop-color:#ed1c24;stop-opacity:1;"
+     offset="0.55000001"
+     id="stop11" /><stop
+     style="stop-color:#ed1c24;stop-opacity:0;"
+     offset="1"
+     id="stop12" /></linearGradient><linearGradient
+   id="linearGradient10"
+   inkscape:collect="always"><stop
+     style="stop-color:#ed1c24;stop-opacity:1;"
+     offset="0.60000002"
+     id="stop9" /><stop
+     style="stop-color:#ed1c24;stop-opacity:0;"
+     offset="1"
+     id="stop10" /></linearGradient><linearGradient
+   id="linearGradient5"
+   inkscape:collect="always"><stop
+     style="stop-color:#ed1c24;stop-opacity:1;"
+     offset="0.5"
+     id="stop7" /><stop
+     style="stop-color:#ed1c24;stop-opacity:0;"
+     offset="1"
+     id="stop8" /></linearGradient><inkscape:path-effect
+   effect="perspective-envelope"
+   up_left_point="95.933594,-6.5898438"
+   up_right_point="1028.7148,-6.5898438"
+   down_left_point="95.933594,352.7168"
+   down_right_point="1028.7148,352.7168"
+   id="path-effect86"
+   is_visible="true"
+   lpeversion="1"
+   deform_type="perspective"
+   horizontal_mirror="false"
+   vertical_mirror="false"
+   overflow_perspective="false" /><linearGradient
+   id="linearGradient85"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(414.8021,73.1405,73.1405,-414.8021,-71470.984,-62611.297)">
+          
+          <stop
+   offset="0.5"
+   style="stop-color:#ed1c24;stop-opacity:1;"
+   id="stop84" />
+         	<stop
+   offset="1"
+   style="stop-color:#000000;stop-opacity:0;"
+   id="stop85" />
+         </linearGradient><linearGradient
+   id="linearGradient82"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(-125.55,-344.946,-344.946,125.55,-16096.027,82137.484)">
+         	
+          <stop
+   offset="0.55000001"
+   style="stop-color:#ed1c24;stop-opacity:1;"
+   id="stop81" />
+           <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop82" />
+        	</linearGradient><linearGradient
+   id="linearGradient79"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(888.1291,-323.2526,-323.2526,-888.1291,-210486.97,-41484.988)">
+           
+          <stop
+   offset="0.60000002"
+   style="stop-color:#ed1c24;stop-opacity:1;"
+   id="stop78" />
+          <stop
+   offset="1"
+   style="stop-color:#000000;stop-opacity:0;"
+   id="stop79" />
+         </linearGradient>
+	
+	<defs
+   id="defs1">
+   <filter
+   id="Adobe_OpacityMaskFilter"
+   filterUnits="userSpaceOnUse"
+   x="0"
+   y="0.027000001"
+   width="159.465"
+   height="343.69">
+   <feFlood
+   result="back"
+   id="feFlood1" />
+   <feBlend
+   in="SourceGraphic"
+   in2="back"
+   mode="normal"
+   id="feBlend1" />
+   </filter>
+	</defs>
+	<mask
+   maskUnits="userSpaceOnUse"
+   x="0"
+   y="0.027"
+   width="159.465"
+   height="343.69"
+   id="SVGID_1_">
+   <g
+   filter="url(#Adobe_OpacityMaskFilter)"
+   id="g12">
+   <g
+   id="g11">
+    <g
+   id="g10">
+     <defs
+   id="defs2">
+     	<rect
+   id="SVGID_2_"
+   y="0.022"
+   width="159.465"
+   height="343.70099"
+   x="0" />
+     </defs>
+     <clipPath
+   id="SVGID_3_">
+      <use
+   xlink:href="#SVGID_2_"
+   overflow="visible"
+   id="use2" />
+     </clipPath>
+     <g
+   enable-background="new    "
+   id="g9">
+      <g
+   id="g8">
+       <defs
+   id="defs3">
+       	<rect
+   id="SVGID_4_"
+   y="0.022"
+   width="159.465"
+   height="343.70099"
+   x="0" />
+       </defs>
+       <clipPath
+   id="SVGID_5_"
+   clip-path="url(#SVGID_3_)">
+       	<use
+   xlink:href="#SVGID_4_"
+   overflow="visible"
+   id="use3" />
+       </clipPath>
+       <g
+   id="g7">
+       	<defs
+   id="defs4">
+          <polygon
+   id="SVGID_6_"
+   points="121.903,343.723 159.465,330.045 150.689,305.936 137.237,310.828 24.11,0.022 0,8.806 " />
+       	</defs>
+       	<clipPath
+   id="SVGID_7_"
+   clip-path="url(#SVGID_5_)">
+          <use
+   xlink:href="#SVGID_6_"
+   overflow="visible"
+   id="use4" />
+       	</clipPath>
+       	<g
+   id="g6">
+          <linearGradient
+   id="SVGID_8_"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(-125.55,-344.946,-344.946,125.55,-16096.027,82137.484)">
+          <stop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="stop4" />
+          <stop
+   offset="0.55"
+   style="stop-color:#FFFFFF"
+   id="stop5" />
+          <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop6" />
+          </linearGradient>
+          <polygon
+   clip-path="url(#SVGID_7_)"
+   fill="url(#SVGID_8_)"
+   points="-107.715,40.669 143.457,-50.75 272.571,303.989 21.399,395.408 "
+   id="polygon6" />
+       	</g>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+   </g>
+	</mask>
+	<defs
+   id="defs15">
+   <filter
+   id="Adobe_OpacityMaskFilter_1_"
+   filterUnits="userSpaceOnUse"
+   x="109.354"
+   y="0"
+   width="890.646"
+   height="343.71799">
+   <feFlood
+   result="back"
+   id="feFlood15" />
+   <feBlend
+   in="SourceGraphic"
+   in2="back"
+   mode="normal"
+   id="feBlend15" />
+   </filter>
+	</defs>
+	<mask
+   maskUnits="userSpaceOnUse"
+   x="109.354"
+   y="0"
+   width="890.646"
+   height="343.718"
+   id="SVGID_9_">
+   <g
+   filter="url(#Adobe_OpacityMaskFilter_1_)"
+   id="g26">
+   <g
+   id="g25">
+    <g
+   id="g24">
+     <defs
+   id="defs16">
+      <rect
+   id="SVGID_10_"
+   x="109.354"
+   y="0.0049999999"
+   width="890.646"
+   height="343.71799" />
+     </defs>
+     <clipPath
+   id="SVGID_11_">
+      <use
+   xlink:href="#SVGID_10_"
+   overflow="visible"
+   id="use16" />
+     </clipPath>
+     <g
+   id="g23">
+      <g
+   id="g22">
+       <defs
+   id="defs17">
+       	<rect
+   id="SVGID_12_"
+   x="109.354"
+   y="0.0049999999"
+   width="890.646"
+   height="343.71799" />
+       </defs>
+       <clipPath
+   id="SVGID_13_"
+   clip-path="url(#SVGID_11_)">
+       	<use
+   xlink:href="#SVGID_12_"
+   overflow="visible"
+   id="use17" />
+       </clipPath>
+       <g
+   id="g21">
+       	<defs
+   id="defs18">
+          <polygon
+   id="SVGID_14_"
+   points="133.458,300.461 109.348,309.239 121.903,343.723 1000,24.116 991.222,0.005 137.237,310.828 " />
+       	</defs>
+       	<clipPath
+   id="SVGID_15_"
+   clip-path="url(#SVGID_13_)">
+          <use
+   xlink:href="#SVGID_14_"
+   overflow="visible"
+   id="use18" />
+       	</clipPath>
+       	<g
+   id="g20">
+          <linearGradient
+   id="SVGID_16_"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(888.1291,-323.2526,-323.2526,-888.1291,-210486.97,-41484.988)">
+          <stop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="stop18" />
+          <stop
+   offset="0.6"
+   style="stop-color:#FFFFFF"
+   id="stop19" />
+          <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop20" />
+          </linearGradient>
+          <polygon
+   clip-path="url(#SVGID_15_)"
+   fill="url(#SVGID_16_)"
+   points="895.572,-283.118 1110.223,306.628 213.287,633.086 -1.363,43.34 "
+   id="polygon20" />
+       	</g>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+   </g>
+	</mask>
+	<defs
+   id="defs29">
+   <filter
+   id="Adobe_OpacityMaskFilter_2_"
+   filterUnits="userSpaceOnUse"
+   x="482.01001"
+   y="380.48401"
+   width="422.14099"
+   height="175.04401">
+   <feFlood
+   result="back"
+   id="feFlood29" />
+   <feBlend
+   in="SourceGraphic"
+   in2="back"
+   mode="normal"
+   id="feBlend29" />
+   </filter>
+	</defs>
+	<mask
+   maskUnits="userSpaceOnUse"
+   x="482.01"
+   y="380.484"
+   width="422.141"
+   height="175.044"
+   id="SVGID_17_">
+   <g
+   filter="url(#Adobe_OpacityMaskFilter_2_)"
+   id="g40">
+   <g
+   id="g39">
+    <g
+   id="g38">
+     <defs
+   id="defs30">
+      <rect
+   id="SVGID_18_"
+   x="482.01001"
+   y="380.48999"
+   width="422.146"
+   height="175.03799" />
+     </defs>
+     <clipPath
+   id="SVGID_19_">
+      <use
+   xlink:href="#SVGID_18_"
+   overflow="visible"
+   id="use30" />
+     </clipPath>
+     <g
+   id="g37">
+      <g
+   id="g36">
+       <defs
+   id="defs31">
+       	<rect
+   id="SVGID_20_"
+   x="482.01001"
+   y="380.48999"
+   width="422.146"
+   height="175.03799" />
+       </defs>
+       <clipPath
+   id="SVGID_21_"
+   clip-path="url(#SVGID_19_)">
+       	<use
+   xlink:href="#SVGID_20_"
+   overflow="visible"
+   id="use31" />
+       </clipPath>
+       <g
+   id="g35">
+       	<defs
+   id="defs32">
+          <polygon
+   id="SVGID_22_"
+   points="505.188,417.263 568.11,417.263 487.804,523.112 482.01,555.528 607.553,555.528 897.667,555.528 904.156,518.761 614.133,518.761 545.367,518.761 626.194,412.907 631.977,380.49 511.763,380.49 " />
+       	</defs>
+       	<clipPath
+   id="SVGID_23_"
+   clip-path="url(#SVGID_21_)">
+          <use
+   xlink:href="#SVGID_22_"
+   overflow="visible"
+   id="use32" />
+       	</clipPath>
+       	<g
+   id="g34">
+          
+          <linearGradient
+   id="SVGID_24_"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(414.8021,73.1405,73.1405,-414.8021,-71470.984,-62611.297)">
+          <stop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="stop32" />
+          <stop
+   offset="0.5"
+   style="stop-color:#FFFFFF"
+   id="stop33" />
+          <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop34" />
+          </linearGradient>
+          <polygon
+   clip-path="url(#SVGID_23_)"
+   fill="url(#SVGID_24_)"
+   points="932.236,383.554 889.581,625.469 450.26,548.005 492.916,306.09 "
+   id="polygon34" />
+       	</g>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+   </g>
+	</mask>
+     <defs
+   id="defs66">
+      <rect
+   id="rect66"
+   y="0.022"
+   width="159.465"
+   height="343.70099"
+   x="0" />
+     </defs>
+     <clipPath
+   id="clipPath67">
+      <use
+   xlink:href="#SVGID_2_"
+   overflow="visible"
+   id="use67" />
+     </clipPath>
+     <defs
+   id="defs55">
+      <rect
+   id="rect55"
+   x="109.354"
+   y="0.0049999999"
+   width="890.646"
+   height="343.71799" />
+     </defs>
+     <clipPath
+   id="clipPath56">
+      <use
+   xlink:href="#SVGID_10_"
+   overflow="visible"
+   id="use56" />
+     </clipPath>
+     <defs
+   id="defs45">
+      <rect
+   id="rect44"
+   x="482.01001"
+   y="380.48999"
+   width="422.146"
+   height="175.03799" />
+     </defs>
+     <clipPath
+   id="clipPath45">
+      <use
+   xlink:href="#SVGID_18_"
+   overflow="visible"
+   id="use45" />
+     </clipPath>
+       <defs
+   id="defs46">
+       	<rect
+   id="rect45"
+   x="482.01001"
+   y="380.48999"
+   width="422.146"
+   height="175.03799" />
+       </defs>
+       <clipPath
+   id="clipPath46"
+   clip-path="url(#SVGID_19_)">
+       	<use
+   xlink:href="#SVGID_20_"
+   overflow="visible"
+   id="use46" />
+       </clipPath>
+       <defs
+   id="defs56">
+       	<rect
+   id="rect56"
+   x="109.354"
+   y="0.0049999999"
+   width="890.646"
+   height="343.71799" />
+       </defs>
+       <clipPath
+   id="clipPath57"
+   clip-path="url(#SVGID_11_)">
+       	<use
+   xlink:href="#SVGID_12_"
+   overflow="visible"
+   id="use57" />
+       </clipPath>
+       <defs
+   id="defs67">
+       	<rect
+   id="rect67"
+   y="0.022"
+   width="159.465"
+   height="343.70099"
+   x="0" />
+       </defs>
+       <clipPath
+   id="clipPath68"
+   clip-path="url(#SVGID_3_)">
+       	<use
+   xlink:href="#SVGID_4_"
+   overflow="visible"
+   id="use68" />
+       </clipPath>
+       	<defs
+   id="defs57">
+          <polygon
+   id="polygon57"
+   points="137.237,310.828 133.458,300.461 109.348,309.239 121.903,343.723 1000,24.116 991.222,0.005 " />
+       	</defs>
+       	<clipPath
+   id="clipPath58"
+   clip-path="url(#SVGID_13_)">
+          <use
+   xlink:href="#SVGID_14_"
+   overflow="visible"
+   id="use58" />
+       	</clipPath>
+          <linearGradient
+   id="linearGradient60"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(888.1291,-323.2526,-323.2526,-888.1291,-210486.97,-41484.988)">
+          <stop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="stop58" />
+          <stop
+   offset="0.6"
+   style="stop-color:#FFFFFF"
+   id="stop59" />
+          <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop60" />
+          </linearGradient>
+       	<defs
+   id="defs47">
+          <polygon
+   id="polygon46"
+   points="568.11,417.263 487.804,523.112 482.01,555.528 607.553,555.528 897.667,555.528 904.156,518.761 614.133,518.761 545.367,518.761 626.194,412.907 631.977,380.49 511.763,380.49 505.188,417.263 " />
+       	</defs>
+       	<clipPath
+   id="clipPath47"
+   clip-path="url(#SVGID_21_)">
+          <use
+   xlink:href="#SVGID_22_"
+   overflow="visible"
+   id="use47" />
+       	</clipPath>
+       	<defs
+   id="defs68">
+          <polygon
+   id="polygon68"
+   points="159.465,330.045 150.689,305.936 137.237,310.828 24.11,0.022 0,8.806 121.903,343.723 " />
+       	</defs>
+       	<clipPath
+   id="clipPath69"
+   clip-path="url(#SVGID_5_)">
+          <use
+   xlink:href="#SVGID_6_"
+   overflow="visible"
+   id="use69" />
+       	</clipPath>
+          <linearGradient
+   id="linearGradient71"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(-125.55,-344.946,-344.946,125.55,-16096.027,82137.484)">
+          <stop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="stop69" />
+          <stop
+   offset="0.55"
+   style="stop-color:#FFFFFF"
+   id="stop70" />
+          <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop71" />
+          </linearGradient>
+          <linearGradient
+   id="linearGradient49"
+   gradientUnits="userSpaceOnUse"
+   x1="194.25391"
+   y1="-117.7861"
+   x2="195.25391"
+   y2="-117.7861"
+   gradientTransform="matrix(414.8021,73.1405,73.1405,-414.8021,-71470.984,-62611.297)">
+          <stop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="stop47" />
+          <stop
+   offset="0.5"
+   style="stop-color:#FFFFFF"
+   id="stop48" />
+          <stop
+   offset="1"
+   style="stop-color:#000000"
+   id="stop49" />
+          </linearGradient>
+       	<linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient5"
+   id="linearGradient8"
+   x1="491.00983"
+   y1="454.4534"
+   x2="905.81195"
+   y2="527.59393"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient10"
+   id="linearGradient9"
+   gradientUnits="userSpaceOnUse"
+   x1="122.77325"
+   y1="331.19678"
+   x2="998.36981"
+   y2="7.9441681"
+   gradientTransform="matrix(1.0142865,0,0,1,-14.286518,-5.6884765e-6)" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient11"
+   id="linearGradient12"
+   x1="145.23991"
+   y1="342.3309"
+   x2="19.689913"
+   y2="-2.6150885"
+   gradientUnits="userSpaceOnUse" /><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath1"><polygon
+     fill="#ed1c24"
+     points="505.188,417.263 511.763,380.484 631.988,380.484 626.183,412.907 545.367,518.761 614.133,518.761 904.15,518.761 897.672,555.528 607.558,555.528 482.01,555.528 487.809,523.112 568.11,417.263 "
+     id="polygon1"
+     style="display:inline;fill:#ed1c24;fill-opacity:1"
+     inkscape:label="polygon16" /></clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath2"><path
+     id="path2"
+     d="M 991.22656,0 137.23633,310.83398 24.109375,0.02734375 0,8.8007812 121.89844,343.71875 1000,24.109375 Z"
+     sodipodi:nodetypes="ccccccc"
+     style="fill:#ed1c24;fill-opacity:1" /></clipPath></defs>
+<g><g
+     id="g27"
+     clip-path="url(#clipPath2)"><path
+       id="rect8"
+       style="font-variation-settings:normal;display:inline;vector-effect:none;fill:url(#linearGradient9);fill-opacity:1;fill-rule:nonzero;stroke-width:0.766566;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 212.62305,0 V 237.74414 H 109.35352 V 343.71875 H 1000 V 0 Z" /><path
+       id="rect10"
+       style="display:inline;vector-effect:none;fill:url(#linearGradient12);stroke-width:1.55483;paint-order:stroke fill markers"
+       d="M 0,0 H 159.465 V 343.71799 H 0 Z" /></g><rect
+     style="display:inline;fill:url(#linearGradient8);fill-rule:nonzero;stroke-width:0.761148;-inkscape-stroke:none;paint-order:stroke fill markers"
+     id="rect5"
+     width="422.14099"
+     height="175.04401"
+     x="482.01001"
+     y="380.48401"
+     clip-path="url(#clipPath1)" /><path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="m 450.629,364.274 6.31,-35.819 h 50.341 l -6.314,35.819 z M 71.794,507.308 50.103,380.49 h 50.342 l 8.141,80.105 36.149,-80.105 h 48.399 L 127.941,507.307 H 71.794 Z m 696.462,0 22.363,-126.817 h 45.985 l -3.504,19.846 c 14.067,-15.25 27.859,-23.48 46.978,-23.48 33.404,0 45.676,19.612 39.528,54.459 l -13.395,75.993 H 855.87 l 11.811,-67.041 c 2.22,-12.587 0.798,-23.714 -13.481,-23.714 -15.489,0 -21.35,9.923 -24.208,26.145 l -11.399,64.61 h -50.337 z m -447.062,0 22.36,-126.817 h 45.741 l -4.527,25.651 h 0.482 c 10.52,-19.841 24.526,-29.286 44.127,-29.286 2.181,0 4.27,0.483 6.408,0.728 l -8.871,50.341 c -3.299,-0.478 -6.765,-1.448 -10.15,-1.448 -20.573,0 -32.688,9.678 -37.505,37.027 l -7.729,43.805 h -50.336 z m 383.792,-96.566 c -17.188,0 -25.386,17.66 -27.898,31.955 -4.22,23.947 2.898,34.364 15.719,34.364 13.558,0 23.621,-10.417 27.848,-34.364 3.286,-18.647 -2.475,-32.676 -15.669,-31.955 m -80.865,34.609 c 7.759,-44.049 41.103,-68.495 83.946,-68.495 44.775,0 67.72,26.384 60.758,65.842 -8.191,46.458 -43.489,68.24 -84.151,68.24 -40.658,0 -68.197,-22.272 -60.553,-65.587 M 228.483,429.617 h 45.738 c 2.048,-11.615 -6.519,-22.027 -18.378,-22.027 -15.006,0 -24.97,8.474 -27.36,22.027 m 91.559,25.656 h -96.083 c -2.64,15.006 7.224,24.924 20.535,24.924 7.989,0 15.885,-3.624 20.844,-11.133 h 48.156 c -14.258,31.468 -48.039,41.873 -77.563,41.873 -40.661,0 -68.023,-23.231 -60.518,-65.826 7.341,-41.634 43.254,-68.256 83.914,-68.256 46.945,0 69.549,32.432 60.715,78.418 m 155.707,52.035 H 425.412 L 447.77,380.49 h 50.342 z"
+     id="path1"
+     style="display:inline" /></g></svg>
