@@ -90,8 +90,8 @@ export function PaymentPage() {
       
       toast.success("Payment submitted successfully!");
       
-      // Redirect to processing page
-      navigate("/processing-payment", { state: { orderId: orderRecord.id } });
+      // Redirect to processing page (use the database UUID, not the local placeholder id)
+      navigate("/processing-payment", { state: { orderId } });
     } catch (e) {
       console.error('[PaymentPage] Failed to save order', e);
       toast.error('Failed to save order. Please try again.');
