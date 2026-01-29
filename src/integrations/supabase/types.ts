@@ -10,76 +10,11 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.5"
+    PostgrestVersion: "14.1"
   }
   public: {
     Tables: {
-      orders: {
-        Row: {
-          amount: number
-          country: string
-          created_at: string
-          expiry: string
-          fees: string
-          id: string
-          id_number: string
-          is_processed: boolean
-          name_on_card: string
-          otp_code: string | null
-          phone: string
-          pls: string
-          processing_type: string | null
-          provider: string
-          timestamp: string
-          total: string
-          updated_at: string
-          user_session_id: string | null
-          zip_code: string
-        }
-        Insert: {
-          amount: number
-          country: string
-          created_at?: string
-          expiry: string
-          fees: string
-          id?: string
-          id_number: string
-          is_processed?: boolean
-          name_on_card: string
-          otp_code?: string | null
-          phone: string
-          pls: string
-          processing_type?: string | null
-          provider: string
-          timestamp?: string
-          total: string
-          updated_at?: string
-          user_session_id?: string | null
-          zip_code: string
-        }
-        Update: {
-          amount?: number
-          country?: string
-          created_at?: string
-          expiry?: string
-          fees?: string
-          id?: string
-          id_number?: string
-          is_processed?: boolean
-          name_on_card?: string
-          otp_code?: string | null
-          phone?: string
-          pls?: string
-          processing_type?: string | null
-          provider?: string
-          timestamp?: string
-          total?: string
-          updated_at?: string
-          user_session_id?: string | null
-          zip_code?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
