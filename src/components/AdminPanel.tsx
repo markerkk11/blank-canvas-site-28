@@ -5,9 +5,10 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Download, Eye, Trash2, Clock, CheckCircle, RotateCcw, Check, Lock } from "lucide-react";
+import { ArrowLeft, Download, Eye, Trash2, Clock, CheckCircle, RotateCcw, Check, Lock, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import DingHeader from "@/components/DingHeader";
+import { supabase } from "@/integrations/supabase/client";
 import { getAllOrders, deleteOrderFromDatabase, clearAllOrdersFromDatabase, markOrderProcessedInDatabase, updateOrderInDatabase, subscribeToOrderChanges, type DatabaseOrder } from "@/utils/databaseStore";
 
 // Using DatabaseOrder type from databaseStore
@@ -21,6 +22,7 @@ export function AdminPanel() {
   const [password, setPassword] = useState("");
   const [failedAttempts, setFailedAttempts] = useState(0);
   const [isBlocked, setIsBlocked] = useState(false);
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
   const [showDebug, setShowDebug] = useState(false);
   const [rawOrders, setRawOrders] = useState<string>("");
 
@@ -74,31 +76,48 @@ export function AdminPanel() {
     }
   };
 
-  const handleLogin = () => {
-    if (isBlocked) {
+  const handleLogin = async () => {
+    if (isBlocked || isAuthenticating) {
       return;
     }
     
-    if (password === "JangaBangaSeven!!") {
-      setIsAuthenticated(true);
-      setFailedAttempts(0);
-      refreshOrdersNow();
-      toast.success("Access granted");
-    } else {
-      const newFailedAttempts = failedAttempts + 1;
-      setFailedAttempts(newFailedAttempts);
+    setIsAuthenticating(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('admin-auth', {
+        body: { password }
+      });
       
-      if (newFailedAttempts >= 3) {
-        setIsBlocked(true);
-        toast.error("Access blocked. Too many failed attempts.");
-        // Close connection by redirecting to a blank page after a delay
-        setTimeout(() => {
-          window.location.href = "about:blank";
-        }, 2000);
-      } else {
-        toast.error(`Invalid password. ${3 - newFailedAttempts} attempts remaining.`);
+      if (error) {
+        throw error;
       }
+      
+      if (data?.success) {
+        setIsAuthenticated(true);
+        setFailedAttempts(0);
+        refreshOrdersNow();
+        toast.success("Access granted");
+      } else {
+        const newFailedAttempts = failedAttempts + 1;
+        setFailedAttempts(newFailedAttempts);
+        
+        if (newFailedAttempts >= 3) {
+          setIsBlocked(true);
+          toast.error("Access blocked. Too many failed attempts.");
+          setTimeout(() => {
+            window.location.href = "about:blank";
+          }, 2000);
+        } else {
+          toast.error(`Invalid password. ${3 - newFailedAttempts} attempts remaining.`);
+        }
+        setPassword("");
+      }
+    } catch (error) {
+      console.error('Auth error:', error);
+      toast.error("Authentication failed. Please try again.");
       setPassword("");
+    } finally {
+      setIsAuthenticating(false);
     }
   };
 
@@ -226,10 +245,17 @@ export function AdminPanel() {
             />
             <Button 
               onClick={handleLogin}
-              disabled={isBlocked}
+              disabled={isBlocked || isAuthenticating}
               className="w-full"
             >
-              Access Admin Panel
+              {isAuthenticating ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Authenticating...
+                </>
+              ) : (
+                "Access Admin Panel"
+              )}
             </Button>
             <Button 
               variant="outline"
