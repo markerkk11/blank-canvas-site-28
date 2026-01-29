@@ -58,17 +58,21 @@ export function ProcessingPaymentPage() {
     // Initial check
     checkOnce();
 
-    // Set up realtime subscription - listen to ALL updates on orders table
-    // then filter client-side to avoid filter syntax issues
+    // Set up realtime subscription with filter for this specific order
     const channel = supabase
-      .channel(`orders-realtime-${state.orderId}`)
+      .channel(`order-updates-${state.orderId}`)
       .on(
         'postgres_changes',
-        { event: 'UPDATE', schema: 'public', table: 'orders' },
+        { 
+          event: 'UPDATE', 
+          schema: 'public', 
+          table: 'orders',
+          filter: `id=eq.${state.orderId}`
+        },
         (payload: any) => {
           console.log('[ProcessingPayment] Realtime update received:', payload);
           const row = payload.new;
-          if (row?.id === state.orderId && row?.is_processed) {
+          if (row?.is_processed) {
             console.log('[ProcessingPayment] Order processed, redirecting...', row.processing_type);
             handleNavigate(row.processing_type);
           }
@@ -76,10 +80,13 @@ export function ProcessingPaymentPage() {
       )
       .subscribe((status) => {
         console.log('[ProcessingPayment] Realtime subscription status:', status);
+        if (status === 'SUBSCRIBED') {
+          console.log('[ProcessingPayment] Successfully subscribed to order updates for:', state.orderId);
+        }
       });
 
-    // Polling fallback
-    const interval = setInterval(checkOnce, 3000);
+    // Polling fallback every 2 seconds in case realtime fails
+    const interval = setInterval(checkOnce, 2000);
 
     return () => {
       clearInterval(interval);
